@@ -1,3 +1,5 @@
+const weapons = ['scissors', 'paper', 'rock', 'lizard', 'spock'];
+
 const winConditions = {
   'scissors': ['paper', 'lizard'],
   'paper': ['rock', 'spock'],
@@ -16,7 +18,9 @@ function getComputerChoice() {
 
 // prompt user for weapon selection
 function getHumanChoice() {
-  let weapon = prompt('Select your weapon');
+  // TODO: uncomment below line & remove "manual" setting of `weapon`
+  //let weapon = prompt('Select your weapon');
+  let weapon = 'spock';
   weapon = weapon.toLowerCase();
   return weapon;
 }
@@ -36,9 +40,48 @@ computer.choice = getComputerChoice();
 
 let human = new Player('human');
 
+function outcomeMessages(computerChoice, humanChoice) {
+  let weapons = [computerChoice, humanChoice];
+
+  switch (true) {
+    case (weapons.includes('scissors') && weapons.includes('paper')):
+      return 'Scissors cut paper!';
+      break;
+    case (weapons.includes('paper') && weapons.includes('rock')):
+      return 'Paper covers rock!';
+      break;
+    case (weapons.includes('rock') && weapons.includes('lizard')):
+      return 'Rock crushes lizard!';
+      break;
+    case (weapons.includes('lizard') && weapons.includes('spock')):
+      return 'Lizard poisons Spock!';
+      break;
+    case (weapons.includes('spock') && weapons.includes('scissors')):
+      return 'Spock smashes (or melts) scissors!';
+      break;
+    case (weapons.includes('scissors') && weapons.includes('lizard')):
+      return 'Scissors decapitate lizard!';
+      break;
+    case (weapons.includes('lizard') && weapons.includes('paper')):
+      return 'Lizard eats paper!';
+      break;
+    case (weapons.includes('paper') && weapons.includes('spock')):
+      return 'Paper disproves Spock!';
+      break;
+    case (weapons.includes('spock') && weapons.includes('rock')):
+      return 'Spock vaporizes rock!';
+      break;
+    case (weapons.includes('rock') && weapons.includes('scissors')):
+      return 'Rock crushes scissors!';
+      break;
+  }
+}
+
 function playGame() {
 
   function playRound(computerChoice, humanChoice) {
+    console.log(outcomeMessages(computerChoice, humanChoice));
+
     if (winConditions[humanChoice].includes(computerChoice)) {
       // human score condition
       return human.score++;
