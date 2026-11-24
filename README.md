@@ -47,20 +47,20 @@ branching visualizer by Peter Cottle is brilliant. Complete only levels
 - [ ] 2. In our UI, the player should be able to play the game by clicking on buttons 
 rather than typing their answer in a prompt.
 
-  - [ ] 2.1 For now, remove the logic that plays exactly five rounds.
+  - [X] 2.1 For now, remove the logic that plays exactly five rounds.
 
-  - [ ] 2.2 Create three buttons, one for each selection. Add an event listener to
+  - [X] 2.2 Create three buttons, one for each selection. Add an event listener to
   the buttons that call your `playRound` function with the correct 
   `playerSelection` every time a button is clicked. (you can keep the 
   `console.logs` for this step)
 
-  - [ ] 2.3 Add a div for displaying results and change all of your `console.logs`
+  - [X] 2.3 Add a div for displaying results and change all of your `console.logs`
   into DOM methods.
 
-  - [ ] 2.4 Display the running score, and announce a winner of the game once one
+  - [X] 2.4 Display the running score, and announce a winner of the game once one
   player reaches 5 points.
 
-  - [ ] 2.5 You will likely have to refactor (rework/rewrite) your original code to
+  - [X] 2.5 You will likely have to refactor (rework/rewrite) your original code to
   make it work for this. That’s OK! Reworking old code is an important part of
   a programmer’s life.
 

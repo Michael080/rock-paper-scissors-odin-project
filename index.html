@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors Lizard Spock</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <ul>
-      <li>Scissors cut paper</li>
-      <li>Paper covers rock</li>
-      <li>Rock crushes lizard</li>
-      <li>Lizard poisons Spock</li>
-      <li>Spock smashes (or melts) scissors</li>
-      <li>Scissors decapitate lizard</li>
-      <li>Lizard eats paper</li>
-      <li>Paper disproves Spock</li>
-      <li>Spock vaporizes rock</li>
-      <li>Rock crushes scissors</li>
-    </ul>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Lizard Spock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Rock Paper Scissors Lizard Spock</h1>
+  <h2>welcome to this ridiculous game</h2>
+  <ul class="player-controls">
+    <button class="player-btn" id="rock">rock</button>
+    <button class="player-btn" id="paper">paper</button>
+    <button class="player-btn" id="scissors">scissors</button>
+    <button class="player-btn" id="lizard">lizard</button>
+    <button class="player-btn" id="spock">spock</button>
+  </ul>
+  <ul>
+    <li>Scissors cut paper</li>
+    <li>Paper covers rock</li>
+    <li>Rock crushes lizard</li>
+    <li>Lizard poisons Spock</li>
+    <li>Spock smashes (or melts) scissors</li>
+    <li>Scissors decapitate lizard</li>
+    <li>Lizard eats paper</li>
+    <li>Paper disproves Spock</li>
+    <li>Spock vaporizes rock</li>
+    <li>Rock crushes scissors</li>
+  </ul>
+
+  <div class="score-human">
+    <h3>You:</h3>
+    <p id="human-score">0</p>
+  </div>
+
+  <div class="score-cpu">
+    <h3>CPU:</h3>
+    <p id="cpu-score">0</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

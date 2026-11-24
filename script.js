@@ -1,3 +1,8 @@
+const heading = document.querySelector('h1');
+const roundMessages = document.querySelector('h2');
+const playerBtns = document.querySelectorAll('.player-btn');
+const turnMessage = document.querySelector('.turn-message');
+
 const weapons = ['scissors', 'paper', 'rock', 'lizard', 'spock'];
 
 const winConditions = {
@@ -8,37 +13,62 @@ const winConditions = {
   'spock': ['scissors', 'rock']
 }
 
+function Player(name) {
+  this.name = name;
+  this.choice;
+  this.score = 0;
+}
+
+let computer = {
+  choice: '',
+  score: 0
+}
+
 function getRandom() {
   return Math.floor(Math.random() * 5);
 }
 
 function getComputerChoice() {
-  return weapons[getRandom()];
+  computer.choice = weapons[getRandom()];
+}
+
+let human = new Player('human');
+
+// update html scoreboard
+function scoreBoard() {
+  const player = document.querySelector('#human-score');
+  const cpu = document.querySelector('#cpu-score');
+
+  player.textContent = human.score;
+  cpu.textContent = computer.score;
 }
 
 // prompt user for weapon selection
-function getHumanChoice() {
-  // TODO: uncomment below line & remove "manual" setting of `weapon`
-  //let weapon = prompt('Select your weapon');
-  let weapon = 'spock';
-  weapon = weapon.toLowerCase();
+function setHumanChoice(weapon) {
+  human.choice = weapon;
+  heading.classList.add('hidden');
+
   return weapon;
 }
 
-function Player(name) {
-  this.name = name;
-  this.choice = getHumanChoice();
-  this.score = 0;
-}
+// return human weapon via button click
+playerBtns.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    let weapon = e.target.id
 
-let computer = {
-  choice: getComputerChoice(),
-  score: 0
-}
+    setHumanChoice(weapon);
+    getComputerChoice();
+    playRound(computer.choice, human.choice);
+    scoreBoard();
 
-computer.choice = getComputerChoice();
+    // update page w/ final outcome (win/lose) message/s
+    if ((human.score !== computer.score) && (human.score >= 5 || computer.score >= 5)) {
+      heading.classList.remove('hidden');
+      human.score > computer.score ? heading.textContent = 'Humanity triumphs!' : heading.textContent = 'The machines shall rule forever!';
+    }
 
-let human = new Player('human');
+  });
+});
 
 function outcomeMessages(computerChoice, humanChoice) {
   let weapons = [computerChoice, humanChoice];
@@ -74,35 +104,23 @@ function outcomeMessages(computerChoice, humanChoice) {
     case (weapons.includes('rock') && weapons.includes('scissors')):
       return 'Rock crushes scissors!';
       break;
+    default:
+      return 'DRAW!';
+      break;
   }
 }
 
-function playGame() {
+function playRound(computerChoice, humanChoice) {
 
-  function playRound(computerChoice, humanChoice) {
-    console.log(outcomeMessages(computerChoice, humanChoice));
+  roundMessages.textContent = outcomeMessages(computerChoice, humanChoice);
 
-    if (winConditions[humanChoice].includes(computerChoice)) {
-      // human score condition
-      return human.score++;
-    }
-
-    if (winConditions[computerChoice].includes(humanChoice)) {
-      //computer win condition
-      return computer.score++;
-    }
+  if (winConditions[humanChoice].includes(computerChoice)) {
+    // human score condition
+    return human.score++;
   }
 
-  let score = [computer.score, human.score];
-
-  while (!score.includes(5)) {
-    playRound(computer.choice, human.choice);
-    score = [human.score, computer.score];
-    computer.choice = getComputerChoice();
-    human.choice = getHumanChoice();
+  if (winConditions[computerChoice].includes(humanChoice)) {
+    //computer win condition
+    return computer.score++;
   }
-
-  human.score > computer.score ? console.log('Humanity triumphs!') : console.log('The machines shall rule forever!');
 }
-
-playGame();
