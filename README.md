@@ -20,7 +20,7 @@ branching visualizer by Peter Cottle is brilliant. Complete only levels
 1-3 of the “Introduction Sequence”.
 
 ### Adding a UI to Rock Paper Scissors
-- [ ] 1. Set up a new branch on your previous Rock Paper Scissors repo
+- [X] 1. Set up a new branch on your previous Rock Paper Scissors repo
 
   - [X] 1.1 Since we’ll be making a UI for our Rock Paper Scissors game, make
   a new branch and change to it with the command `git checkout -b rps-ui`.
