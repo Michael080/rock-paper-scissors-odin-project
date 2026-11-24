@@ -22,10 +22,10 @@ branching visualizer by Peter Cottle is brilliant. Complete only levels
 ### Adding a UI to Rock Paper Scissors
 - [ ] 1. Set up a new branch on your previous Rock Paper Scissors repo
 
-  - [ ] 1.1 Since we’ll be making a UI for our Rock Paper Scissors game, make
+  - [X] 1.1 Since we’ll be making a UI for our Rock Paper Scissors game, make
   a new branch and change to it with the command `git checkout -b rps-ui`.
 
-  - [ ] 1.2 You are now working in the `rps-ui` branch, locally. However, this
+  - [X] 1.2 You are now working in the `rps-ui` branch, locally. However, this
   branch does not exist in your remote repo yet. If you go to your github
   repo page, you’ll see that you only have 1 branch, which would be `main`.
   Let’s push this new branch to your remote repo with the command 
@@ -33,7 +33,7 @@ branching visualizer by Peter Cottle is brilliant. Complete only levels
   repository! You can select the new branch on GitHub using the dropdown
   branch selector shown in the screenshot below.
 
-  - [ ] 1.3 Make sure you are on the rps-ui branch. You can check this, with the
+  - [X] 1.3 Make sure you are on the rps-ui branch. You can check this, with the
   `git branch` command. The branch you are currently on will have an 
   (*)asterisk next to it. If you’re in another branch for some reason, change
   to `rps-ui` with the command `git checkout rps-ui`. Now you’re all set to
