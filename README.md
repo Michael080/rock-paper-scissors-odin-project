@@ -44,7 +44,7 @@ branching visualizer by Peter Cottle is brilliant. Complete only levels
   except when you push the changes, you’d use `git push origin rps-ui` instead
   of `git push origin main`, since we’re pushing to our new branch.
 
-- [ ] 2. In our UI, the player should be able to play the game by clicking on buttons 
+- [X] 2. In our UI, the player should be able to play the game by clicking on buttons 
 rather than typing their answer in a prompt.
 
   - [X] 2.1 For now, remove the logic that plays exactly five rounds.
@@ -64,31 +64,31 @@ rather than typing their answer in a prompt.
   make it work for this. That’s OK! Reworking old code is an important part of
   a programmer’s life.
 
-- [ ] 3. Once you’re all done with your UI and made sure everything’s satisfactory,
+- [X] 3. Once you’re all done with your UI and made sure everything’s satisfactory,
 ensure all of your changes are committed to the `rps-ui` branch with `git 
 status` before continuing.
 
-- [ ] 4. Now let’s take a look at how we can merge the changes from our `rps-ui`
+- [X] 4. Now let’s take a look at how we can merge the changes from our `rps-ui`
 branch back to our `main` branch.
 
-  - [ ] 4.1 Checkout the branch we want to merge INTO i.e. `main` with the command
+  - [X] 4.1 Checkout the branch we want to merge INTO i.e. `main` with the command
   `git checkout main`.
 
-  - [ ] 4.2 Now let’s merge our `rps-ui` branch into `main`, our current branch, with
+  - [X] 4.2 Now let’s merge our `rps-ui` branch into `main`, our current branch, with
   `git merge rps-ui`.
 
-  - [ ] 4.3 If everything goes fine, our `rps-ui` branch is now successfully merged
+  - [X] 4.3 If everything goes fine, our `rps-ui` branch is now successfully merged
   with `main`! Use `git log` and you’ll see all the commits you’ve made to your
   feature branch on top of the commits you made to the `main` branch. Now for our
   final step!
 
-  - [ ] 4.4 Let’s push our `main` branch into our remote repo by running `git push
+  - [X] 4.4 Let’s push our `main` branch into our remote repo by running `git push
   origin main` . Go to your GitHub repo and you’ll see that our `main` branch
   will have all the changes and commits you made to the `rps-ui` branch.
   Congratulations! You’ve successfully pushed your first feature into your
   production branch!
 
-  - [ ] 4.5 Now that we have all our code in the `main` branch, we don’t really need
+  - [X] 4.5 Now that we have all our code in the `main` branch, we don’t really need
   our `rps-ui` branch anymore. Let’s do some cleanup, both locally and in the
   remote repo. Delete the branch from our local repo with `git branch -d rps-ui`
   and also delete it from the remote repo on GitHub with `git push origin --delete
